@@ -9,15 +9,16 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
     on<RegisterEvent>((event, emit) {
       // TODO: implement event handler
     });
-    on<RegisterUser>((event, emit){
-      //TODO everything is valid
-      emit(RegisterSuccess());
+    on<RegisterUser>((event, emit) {
+      if (event.password != event.confirmPassword) {
+        emit(RegisterFailed(errorMessage: 'Password mismatch'));
+      } else {
+        // //TODO everything is valid
+        emit(RegisterSuccess());
 
-      //TODO if username is invalid
-      emit(RegisterFailed(errorMessage: 'Invalid Username'));
-
-      //TODO if both password does not match
-      emit(RegisterFailed(errorMessage: 'Password mismatch'));
+        //TODO if username is invalid
+        emit(RegisterFailed(errorMessage: 'Invalid Username'));
+      }
     });
   }
 }

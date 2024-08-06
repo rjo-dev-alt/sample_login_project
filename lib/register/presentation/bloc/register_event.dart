@@ -8,5 +8,8 @@ final class RegisterUser extends RegisterEvent {
   final String password;
   final String confirmPassword;
 
-  RegisterUser({required this.username, required this.password, required this.confirmPassword});
+  RegisterUser(
+      {required this.username,
+      required this.password,
+      required this.confirmPassword});
 }
