@@ -1,3 +1,4 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -39,7 +40,7 @@ class LoginScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             TextButton(
-              onPressed: () {},
+              onPressed: () => Beamer.of(context).beamToNamed('/register'),
               child: const Text('Register'),
             ),
           ],
